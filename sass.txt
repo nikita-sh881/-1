@@ -1,0 +1,35 @@
+$primary-color: #333;
+$font-stack: Arial, sans-serif;
+$border-radius: 8px;
+
+@mixin box-shadow($x, $y, $blur, $color) {
+    box-shadow: $x $y $blur $color;
+}
+
+.product-card {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    padding: 16px;
+    font-family: $font-stack;
+    background-color: #fff;
+    @include box-shadow(0, 4px, 8px, rgba(0,0,0,0.1));
+
+    &__image {
+        width: 100%;
+        border-radius: $border-radius;
+        margin-bottom: 12px;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $primary-color;
+        margin: 0 0 8px;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: lighten($primary-color, 20%);
+        margin: 0;
+    }
+}
